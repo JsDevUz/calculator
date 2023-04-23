@@ -65,27 +65,25 @@ function CleanInput(input) {
     let input_array = input.split("")
     let input_array_length = input_array.length
     for (let i = 0; i < input_array_length; i++) {
-        if (input_array[i] == "*") {
-            input_array[i] = `<span class='operator'>*</span> `
-        } else if (input_array[i] == "/") {
-            input_array[i] = `<span class='operator'>/</span> `
+        if (input_array[i] == "/") {
+            input_array[i] = `<span class='operator'> /</span> `
         } else if (input_array[i] == "*") {
-            input_array[i] = `<span class='operator'>*</span> `
+            input_array[i] = `<span class='operator'> *</span> `
         }
         else if (input_array[i] == "+") {
-            input_array[i] = `<span class='operator'>+</span> `
+            input_array[i] = `<span class='operator'> +</span> `
         }
         else if (input_array[i] == "-") {
-            input_array[i] = `<span class='operator'>-</span> `
+            input_array[i] = `<span class='operator'> -</span> `
         }
         else if (input_array[i] == "(") {
-            input_array[i] = `<span class='brackets'>(</span> `
+            input_array[i] = `<span class='brackets'> (</span> `
         }
         else if (input_array[i] == ")") {
-            input_array[i] = `<span class='brackets'>)</span> `
+            input_array[i] = `<span class='brackets'> )</span> `
         }
         else if (input_array[i] == "%") {
-            input_array[i] = `<span class='percent'>%</span> `
+            input_array[i] = `<span class='percent'> %</span> `
         }
     }
 
