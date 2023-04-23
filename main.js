@@ -66,24 +66,24 @@ function CleanInput(input) {
     let input_array_length = input_array.length
     for (let i = 0; i < input_array_length; i++) {
         if (input_array[i] == "/") {
-            input_array[i] = `<span class='operator'> /</span> `
+            input_array[i] = `<span class='operator'>/</span>`
         } else if (input_array[i] == "*") {
-            input_array[i] = `<span class='operator'> *</span> `
+            input_array[i] = `<span class='operator'>×</span>`
         }
         else if (input_array[i] == "+") {
-            input_array[i] = `<span class='operator'> +</span> `
+            input_array[i] = `<span class='operator'>+</span>`
         }
         else if (input_array[i] == "-") {
-            input_array[i] = `<span class='operator'> -</span> `
+            input_array[i] = `<span class='operator'>-</span>`
         }
         else if (input_array[i] == "(") {
-            input_array[i] = `<span class='brackets'> (</span> `
+            input_array[i] = `<span class='brackets'>(</span>`
         }
         else if (input_array[i] == ")") {
-            input_array[i] = `<span class='brackets'> )</span> `
+            input_array[i] = `<span class='brackets'>)</span>`
         }
         else if (input_array[i] == "%") {
-            input_array[i] = `<span class='percent'> %</span> `
+            input_array[i] = `<span class='percent'>%</span>`
         }
     }
 
@@ -104,7 +104,11 @@ function CleanOutput(output) {
         output_array.push('.');
         output_array.push(decimal);
     }
-    return (Math.round(output_array.join("") * 100) / 100).toFixed(2);
+    if (output_array.includes('.')) {
+        return (Math.round(output_array.join("") * 100) / 100).toFixed(2)
+    } else {
+        return output_array.join("");
+    }
 }
 
 function ValidateInput(value) {
